@@ -20,11 +20,12 @@ class Anagram {
     }
 
     private boolean allCharsInTarget(String word) {
-        return Chars.asList(word.toCharArray()).stream().distinct().allMatch(TARGETS::contains);
+        return Chars.asList(word.toLowerCase().toCharArray()).stream().distinct().allMatch(TARGETS::contains);
     }
 
     boolean match(String word1, String word2) {
-        List<Character> current = Lists.charactersOf(String.format("%s%s", word1, word2)).stream().sorted().collect(Collectors.toList());
+        List<Character> current = Lists.charactersOf(String.format("%s%s", word1, word2).toLowerCase())
+                .stream().sorted().collect(Collectors.toList());
         return SORTED_ANAGRAM_CHARS.equals(current);
     }
 }

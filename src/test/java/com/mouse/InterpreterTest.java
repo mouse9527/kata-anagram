@@ -14,7 +14,7 @@ public class InterpreterTest {
 
     @Test
     public void should_read_word_list_from_file_correctly() {
-        assertThat(new Interpreter().readWordList("wordlist.txt").size(), is(1633));
+        assertThat(new Interpreter().readWordList("wordlist.txt").size(), is(338882));
     }
 
     @Test

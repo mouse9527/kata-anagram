@@ -13,16 +13,16 @@ public class AnagramTest {
 
     @Test
     public void should_filter_word_list_correctly() {
-        assertThat(new Anagram().filter(getWorkList()), is(Collections.singletonList("docume")));
+        assertThat(new Anagram().filter(getWorkList()), is(Collections.singletonList("doCume")));
     }
 
     private List<String> getWorkList() {
-        return Lists.newArrayList("docume", "documendfting");
+        return Lists.newArrayList("doCume", "documendfting");
     }
 
     @Test
     public void should_match_words_correctly() {
-        assertThat(new Anagram().match("uetnno", "cdmgi"), is(true));
+        assertThat(new Anagram().match("Uetnno", "cdmgi"), is(true));
         assertThat(new Anagram().match("uetno", "cdmig"), is(false));
         assertThat(new Anagram().match("uetnnoo", "cdmgi"), is(false));
     }
